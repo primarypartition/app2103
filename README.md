@@ -79,11 +79,14 @@ public function boot()
 
 ```
 > php artisan server
+> php artisan migrate
 > php artisan migrate:fresh
 > php artisan route:list
 > php artisan make:conttoller CategoryController -r
 > php artisan make:model Category -m
 > php artisan storage:link
+> php artisan make:middleware admin
+> php artisan db:seed
 ```
 
 ## UI
@@ -91,3 +94,5 @@ public function boot()
 > https://github.com/mckenziearts/laravel-notify
 
 > https://summernote.org/
+
+> npm install @fontawesome/fontawesome-free
