@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+
 use App\Models\Category;
+
 class CategoryController extends Controller
 {
     /**
@@ -15,7 +17,8 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::get();
-        return view('admin.category.index',compact('categories'));
+
+        return view('admin.category.index', compact('categories'));
     }
 
     /**
@@ -41,18 +44,19 @@ class CategoryController extends Controller
             'description'=>'required',
             'image'=>'required|mimes:jpeg,png'
         ]);
+
         $image = $request->file('image')->store('public/files');
+
         Category::create([
             'name'=>$request->name,
             'slug'=>Str::slug($request->name),
             'description'=>$request->description,
             'image'=>$image
-
-
         ]);
-        notify()->success('Category created successfully!');
-        return redirect()->route('category.index');
 
+        notify()->success('Category created successfully!');
+
+        return redirect()->route('category.index');
     }
 
     /**
@@ -75,7 +79,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
        $category = Category::find($id);
-       return view('admin.category.edit',compact('category'));
+
+       return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -89,16 +94,20 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $image = $category->image;
-        if($request->hasFile('image')){
-            $image = $request->file('image')->store('public/files');
-             \Storage::delete($category->image);
 
+        if($request->hasFile('image')) {
+            $image = $request->file('image')->store('public/files');
+
+            \Storage::delete($category->image);
         }
-        $category->name= $request->name;
-        $category->description= $request->description;
-        $category->image=$image;
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+        $category->image = $image;
         $category->save();
+
         notify()->success('Category updated successfully!');
+
         return redirect()->route('category.index');
     }
 
@@ -110,12 +119,14 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-
         $category = Category::find($id);
         $filename = $category->image;
+
         $category->delete();
         \Storage::delete($filename);
+
         notify()->success('Category deleted successfully!');
+
         return redirect()->route('category.index');
     }
 }

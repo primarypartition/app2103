@@ -83,4 +83,10 @@ public function boot()
 > php artisan route:list
 > php artisan make:conttoller CategoryController -r
 > php artisan make:model Category -m
+> php artisan storage:link
 ```
+
+## UI
+
+> https://github.com/mckenziearts/laravel-notify
+

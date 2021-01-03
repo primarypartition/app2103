@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Subcategory;
+
 class SubcategoryController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class SubcategoryController extends Controller
     public function index()
     {
        $subcategories = Subcategory::get();
-       return view('admin.subcategory.index',compact('subcategories'));
+
+       return view('admin.subcategory.index', compact('subcategories'));
     }
 
     /**
@@ -24,7 +26,6 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-
         return view('admin.subcategory.create');
     }
 
@@ -40,13 +41,14 @@ class SubcategoryController extends Controller
             'name'=>'required|min:3',
             'category'=>'required'
         ]);
-       Subcategory::create([
 
+        Subcategory::create([
             'name'=>$request->name,
             'category_id'=>$request->category
+        ]);
 
-       ]);
         notify()->success('Subcategory created successfully!');
+
         return redirect()->back();
     }
 
@@ -69,10 +71,9 @@ class SubcategoryController extends Controller
      */
     public function edit($id)
     {
-       $subcategory  = Subcategory::find($id);
-       return view('admin.subcategory.edit',compact('subcategory'));
+       $subcategory = Subcategory::find($id);
 
-
+       return view('admin.subcategory.edit', compact('subcategory'));
     }
 
     /**
@@ -88,7 +89,9 @@ class SubcategoryController extends Controller
         $subcategory->name = $request->name;
         $subcategory->category_id = $request->category;
         $subcategory->save();
+
         notify()->success('Subcategory updated successfully!');
+
         return redirect()->route('subcategory.index');
     }
 
@@ -102,7 +105,9 @@ class SubcategoryController extends Controller
     {
         $subcategory = Subcategory::find($id);
         $subcategory->delete();
+
         notify()->success('Subcategory deleted successfully!');
+
         return redirect()->route('subcategory.index');
     }
 }
