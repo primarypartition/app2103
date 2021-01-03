@@ -17,9 +17,9 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $fillable = ['name',
+                           'email',
+                           'password',];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -39,13 +39,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function orders(){
-        return $this->hasMany('App\Order');
+    /**
+     *
+     */
+    public function orders()
+    {
+        return $this->hasMany('App\Models\Order');
     }
-    public function getUserOrders(){
+
+    /**
+     *
+     */
+    public function getUserOrders()
+    {
         $users = Order::get();
+
         return $users;
     }
-
-
 }

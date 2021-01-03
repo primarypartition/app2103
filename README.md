@@ -90,3 +90,4 @@ public function boot()
 
 > https://github.com/mckenziearts/laravel-notify
 
+> https://summernote.org/

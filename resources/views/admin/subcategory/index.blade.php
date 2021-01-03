@@ -6,7 +6,7 @@
         <h1 class="h3 mb-0 text-gray-800">Subcategory Tables</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./">Home</a></li>
-            <li class="breadcrumb-item">Subategory</li>
+            <li class="breadcrumb-item">Subcategory</li>
             <li class="breadcrumb-item active" aria-current="page">Subcategory Tables</li>
         </ol>
     </div>
