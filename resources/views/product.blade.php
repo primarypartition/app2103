@@ -157,29 +157,6 @@
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript">
-$("document").ready(function(){
-    $(".addToCart").click(function(e){
-        e.preventDefault();
-        var product = $(this).attr('id');
-       // alert(product)
-        $.ajax({
-            //  headers: {
-            //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            // },
-            type: "GET",
-            url: "http://localhost:8000/addToCart/"+product,
-           // data: { product: product },
-            success: function (data) {
 
-            },
-            error: function (data) {
-                console.log(data)
-            }
-        });
-    })
-});
-</script>
 
 @endsection
