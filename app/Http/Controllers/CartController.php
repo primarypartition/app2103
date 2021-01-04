@@ -105,17 +105,17 @@ class CartController extends Controller
     public function charge(Request $request)
     {
         $charge = Stripe::charges()->create([
-                        'currency'=>"USD",
-                        'source'=>$request->stripeToken,
-                        'amount'=>$request->amount,
-                        'description'=>'Test'
+                        'currency' => "USD",
+                        'source' => $request->stripeToken,
+                        'amount' => $request->amount,
+                        'description' => 'Test'
                   ]);
 
         $chargeId = $charge['id'];
 
         if(session()->has('cart')) {
             $cart = new Cart(session()->get('cart'));
-        }else{
+        } else {
             $cart = null;
         }
 
@@ -169,7 +169,7 @@ class CartController extends Controller
         $user = User::find($userid);
         $orders = $user->orders->where('id', $orderid);
 
-        $carts =$orders->transform(function($cart, $key){
+        $carts = $orders->transform(function($cart, $key){
             return unserialize($cart->cart);
         });
 

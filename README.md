@@ -96,3 +96,21 @@ public function boot()
 > https://summernote.org/
 
 > npm install @fontawesome/fontawesome-free
+
+
+## Payment
+
+```
+https://dashboard.stripe.com/register
+https://stripe.com/docs/stripe-js
+https://stripe.com/docs/keys
+https://github.com/cartalyst/stripe-laravel
+https://cartalyst.com/manual/stripe-laravel/13.x
+https://stripe.com/docs/testing
+
+"cartalyst/stripe": "~2.0"
+"cartalyst/stripe-laravel": "^13.0"
+composer install && composer update
+composer dump-autoload
+
+```
