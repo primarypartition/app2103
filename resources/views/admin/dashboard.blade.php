@@ -1,27 +1,18 @@
 @include('admin.layouts.header')
-  <div id="wrapper">
-    <!-- Sidebar -->
-@include('admin.layouts.sidebar')
-    <!-- Sidebar -->
+
+<div id="wrapper">
+    @include('admin.layouts.sidebar')
     <div id="content-wrapper" class="d-flex flex-column">
-      <div id="content">
-        <!-- TopBar -->
-@include('admin.layouts.navbar')
-        <!-- Topbar -->
+        <div id="content">
+            @include('admin.layouts.navbar')
 
-        <!-- Container Fluid-->
-     @include('admin.layouts.container')
-        <!---Container Fluid-->
-      </div>
-      <!-- Footer -->
-    @include('admin.layouts.fotter')
-      <!-- Footer -->
+            @include('admin.layouts.container')
+        </div>
+
+        @include('admin.layouts.fotter')
     </div>
-  </div>
+</div>
 
-  <!-- Scroll to top -->
-  <a class="scroll-to-top rounded" href="#page-top">
+<a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
-  </a>
-
-  
+</a>
