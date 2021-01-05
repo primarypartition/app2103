@@ -20,7 +20,7 @@ class Sendmail extends Mailable
      */
     public function __construct($cart)
     {
-        $this->cart=$cart;
+        $this->cart = $cart;
     }
 
     /**

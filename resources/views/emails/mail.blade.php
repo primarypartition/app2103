@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    @php $i=1 ; @endphp
+    @php $i=1; @endphp
 
     @foreach($cart->items as $product)
         <tr>
@@ -18,12 +18,11 @@
             <td>{{$product['qty']}}</td>
         </tr>
     @endforeach
-
-    <br>
-
-    Total Price: {{$cart->totalPrice}}
-
-    Plese click the link to view your order. <a href="{{url('/orders')}}"> click here</a>
-
   </tbody>
 </table>
+
+<br>
+
+Total Price: {{$cart->totalPrice}}
+
+Plese click the link to view your order. <a href="{{url('/orders')}}"> click here</a>

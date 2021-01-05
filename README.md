@@ -87,6 +87,7 @@ public function boot()
 > php artisan storage:link
 > php artisan make:middleware admin
 > php artisan db:seed
+> php artisan make:maik Sendmail
 ```
 
 ## UI
